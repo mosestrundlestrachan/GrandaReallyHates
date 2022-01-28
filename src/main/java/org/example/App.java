@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
+public class App {
     static List<String> knownWords;
 
     public static void main(String[] args) {
@@ -19,23 +19,19 @@ public class App
         try {
             BufferedReader br = new BufferedReader(new FileReader("common_words.txt"));
             String nextWord;
-            while((nextWord = br.readLine()) != null) {
+            while ((nextWord = br.readLine()) != null) {
                 knownWords.add(nextWord);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        System.out.println("Hello, I'm Grandma Betty");
-
+        Scanner s = new Scanner(System.in);
+        Grandma grandma = new Nana();
+        System.out.println("Hello, my name is grandma" + grandma.getName());
 
     }
 
-    /**
-     * This method should return true if the given String has consecutive letters that are the same.
-     * @param str -- the String in question.
-     * @return true if str has any consecutive letters that are identical; false if not.
-     */
-    public static boolean hasDoubleLetters(String str) {
-        return false;
-    }
 }
+
+
+
